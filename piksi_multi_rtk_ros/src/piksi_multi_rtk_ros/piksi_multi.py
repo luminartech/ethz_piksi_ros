@@ -297,7 +297,7 @@ class PiksiMulti:
         :return: python dictionary, with topic names used as keys and publishers as values.
         """
         publishers = {}
-
+#TODO: Change imu msg type to IMU ros and Remove non ROS msgs
         publishers['rtk_fix'] = rospy.Publisher(rospy.get_name() + '/navsatfix_rtk_fix',
                                                 NavSatFix, queue_size=10)
         publishers['spp'] = rospy.Publisher(rospy.get_name() + '/navsatfix_spp',

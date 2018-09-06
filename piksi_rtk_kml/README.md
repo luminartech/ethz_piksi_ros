@@ -15,3 +15,7 @@ roslaunch piksi_rtk_kml offline_ground_vehicle.launch
 ## Example of output
 The following image has been taken from Google Earth, where a KML file has been generated using the above launch file.
 ![example_kml_image_output](https://user-images.githubusercontent.com/5328930/41427607-c496cc26-7007-11e8-9ccb-2f6ec6b25ba6.png)
+
+
+
+TODO: Parameterize color, topic and bag name
