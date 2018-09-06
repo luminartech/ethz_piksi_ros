@@ -5,7 +5,7 @@ project(piksi_rtk_kml)
 find_package(catkin REQUIRED
   COMPONENTS
     geometry_msgs
-    piksi_rtk_msgs
+    piksi_multi_rtk_ros
     roslib
     rospy
 )
@@ -24,7 +24,7 @@ catkin_package(
 #  LIBRARIES
   CATKIN_DEPENDS
     geometry_msgs
-    piksi_rtk_msgs
+    piksi_multi_rtk_ros
     roslib
     rospy
 #  DEPENDS

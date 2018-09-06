@@ -13,12 +13,12 @@ import numpy as np
 import std_srvs.srv
 # Import message types
 from sensor_msgs.msg import NavSatFix, NavSatStatus
-from piksi_rtk_msgs.msg import (AgeOfCorrections, BaselineEcef, BaselineHeading, BaselineNed, BasePosEcef, BasePosLlh,
+from piksi_multi_rtk_ros.msg import (AgeOfCorrections, BaselineEcef, BaselineHeading, BaselineNed, BasePosEcef, BasePosLlh,
                                 DeviceMonitor_V2_3_15, DopsMulti, GpsTimeMulti, Heartbeat, ImuRawMulti,
                                 InfoWifiCorrections, Log, MagRaw, Observation, PosEcef, PosLlhMulti,
                                 ReceiverState_V2_3_15, TrackingState_V2_3_15,
                                 UartState_V2_3_15, UtcTimeMulti, VelEcef, VelNed)
-from piksi_rtk_msgs.srv import *
+from piksi_multi_rtk_ros.srv import *
 from geometry_msgs.msg import (PoseWithCovarianceStamped, PointStamped, PoseWithCovariance, Point, TransformStamped,
                                Transform)
 # Import Piksi SBP library
@@ -160,7 +160,7 @@ class PiksiMulti:
         self.messages_started = False
 
         # Other parameters.
-        self.publish_raw_imu_and_mag = rospy.get_param('~publish_raw_imu_and_mag', False)
+        self.publish_raw_imu_and_mag = rospy.get_param('~publish_raw_imu_and_mag', true)
 
         # Advertise topics and services.
         self.publishers = self.advertise_topics()

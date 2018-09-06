@@ -7,7 +7,7 @@
 
 import rospy
 import roslib.packages
-from piksi_rtk_msgs.srv import *
+from piksi_multi_rtk_ros.srv import *
 import std_srvs.srv
 from sensor_msgs.msg import (NavSatFix, NavSatStatus)
 import os

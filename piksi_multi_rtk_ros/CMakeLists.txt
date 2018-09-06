@@ -5,11 +5,67 @@ project(piksi_multi_rtk_ros)
 find_package(catkin REQUIRED
   COMPONENTS
     geometry_msgs
-    piksi_rtk_msgs
+    message_generation
+    std_msgs
     sensor_msgs
     roslib
     rospy
 )
+
+
+add_message_files(
+  FILES
+    AgeOfCorrections.msg
+    BaselineEcef.msg
+    BaselineHeading.msg
+    BaselineNed.msg
+    BasePosEcef.msg
+    BasePosLlh.msg
+    DeviceMonitor_V2_3_15.msg
+    Dops.msg
+    DopsMulti.msg
+    GpsTime.msg
+    GpsTimeMulti.msg
+    Heartbeat.msg
+    ImuAuxMulti.msg
+    ImuRawMulti.msg
+    InfoWifiCorrections.msg
+    Log.msg
+    MagRaw.msg
+    Observation.msg
+    PosEcef.msg
+    PosLlh.msg
+    PosLlhMulti.msg
+    ReceiverState.msg
+    ReceiverState_V2_2_15.msg
+    ReceiverState_V2_3_15.msg
+    TrackingState.msg
+    TrackingState_V2_2_15.msg
+    TrackingState_V2_3_15.msg
+    UartState.msg
+    UartState_V2_3_15.msg
+    UtcTimeMulti.msg
+    VelEcef.msg
+    VelNed.msg
+)
+
+## Generate services in the 'srv' folder
+add_service_files(
+  FILES
+    SettingsWrite.srv
+    SettingsReadReq.srv
+    SettingsReadResp.srv
+)
+
+## Generate added messages and services with any dependencies listed here
+
+generate_messages(
+  DEPENDENCIES
+    std_msgs
+    geometry_msgs
+    sensor_msgs
+)
+
 
 ###################################
 ## catkin specific configuration ##
@@ -25,17 +81,22 @@ catkin_package(
 #  LIBRARIES
   CATKIN_DEPENDS
     geometry_msgs
+    message_runtime
+    std_msgs
     sensor_msgs
-    piksi_rtk_msgs
     roslib
     rospy
 #  DEPENDS
 )
 
+
+
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
 ## See http://ros.org/doc/api/catkin/html/user_guide/setup_dot_py.html
-catkin_python_setup()
+#catkin_python_setup()
+
+
 
 #############
 ## Install ##
@@ -47,3 +108,4 @@ catkin_python_setup()
 install(DIRECTORY cfg launch log_surveys rosbag_record_scripts
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
+

@@ -9,7 +9,7 @@ import rospy
 import roslib.packages
 import time
 from datetime import datetime
-from piksi_rtk_msgs.msg import *
+from piksi_multi_rtk_ros.msg import *
 from sensor_msgs.msg import NavSatFix
 from geometry_msgs.msg import PointStamped
 
@@ -49,9 +49,9 @@ class PiksiRtkKml:
                 it is recommended to set parameter kml_altitude_mode = 'relativeToGround'")
 
         # Subscribe.
-        rospy.Subscriber('piksi/navsatfix_rtk_fix', NavSatFix,
+        rospy.Subscriber('/novatel_gps/fix', NavSatFix,
                          self.navsatfix_rtk_fix_callback)
-        rospy.Subscriber('piksi/baseline_heading', BaselineHeading,
+        rospy.Subscriber('/baseline_heading', BaselineHeading,
                          self.baseline_heading_callback)
         rospy.Subscriber('piksi/enu_point_fix', PointStamped,
                          self.enu_point_callback)
@@ -154,11 +154,11 @@ class PiksiRtkKml:
         return '''
     <Style id="yellowLineGreenPoly">
         <LineStyle>
-            <color>ff00ffff</color>
+            <color>FF000080</color>
             <width>25</width>
         </LineStyle>
         <PolyStyle>
-            <color>7f00ff00</color>
+            <color>FF000080</color>
         </PolyStyle>
     </Style>
     <Placemark>

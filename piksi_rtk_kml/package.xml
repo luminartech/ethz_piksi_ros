@@ -14,7 +14,7 @@
   <buildtool_depend>catkin</buildtool_depend>
 
   <depend>geometry_msgs</depend>
-  <depend>piksi_rtk_msgs</depend>
+  <depend>piksi_multi_rtk_ros</depend>
   <depend>roslib</depend>
   <depend>rospy</depend>
 

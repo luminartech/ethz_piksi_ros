@@ -3,9 +3,9 @@
 <launch>
 
   <!-- Bag file (including absolute file path) -->
-  <arg name="bagfile"                      default="/home/marco/bags/erl/2017-09-20/gps_erl_2017-09-20-19-08-31.bag"/>
+  <arg name="bagfile"                      default="/home/jimit-lumin/Downloads/straight.bag"/>
   <!-- Publishing rate multiplier -->
-  <arg name="publishing_rate_multiplier"   default="200"/>
+  <arg name="publishing_rate_multiplier"   default="2"/>
   <!-- Use simulation clock -->
   <arg name="use_sim_time"                 default="true"/>
 
